@@ -1,0 +1,20 @@
+- name: Set misc directory permissions
+  ansible.builtin.file:
+    path: "{{ item }}"
+    state: directory
+    owner: "{{ ansible_user_id }}"
+    mode: 0700
+  loop:
+    - "{{ path_home }}"
+    - "{{ path_home }}/.ssh"
+
+- name: Create misc directories
+  ansible.builtin.file:
+    path: "{{ item }}"
+    state: directory
+    mode: 0700
+  loop:
+    - "{{ path_home }}/.config"
+    - "{{ path_home }}/.local/bin"
+    - "{{ path_home }}/.local/share"
+

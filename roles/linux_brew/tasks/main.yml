@@ -1,0 +1,44 @@
+# - name: Include Ruby 2.6.8 install playbook
+#   include: ruby.yml
+#   when: ansible_facts.ansible_architecture == "aarch64"
+
+- name: Create directory {{ path_linuxbrew }}
+  ansible.builtin.file:
+    path: "{{ path_linuxbrew }}"
+    state: directory
+    owner: "{{ ansible_user_id }}"
+    group: "{{ ansible_user_gid }}"
+    mode: 0700
+  become: true
+
+- name: Git clone/pull Linuxbrew repos
+  ansible.builtin.git:
+    repo: "{{ item.repo }}"
+    dest: "{{ item.dest }}"
+  loop:
+    - repo: https://github.com/Homebrew/brew.git
+      dest: "{{ path_linuxbrew }}"
+    - repo: https://github.com/Homebrew/homebrew-core
+      dest: "{{ path_linuxbrew }}/Library/Taps/homebrew/homebrew-core"
+
+- name: Upgrade all Linuxbrew packages
+  community.general.homebrew:
+    update_homebrew: true
+    upgrade_all: true
+    path: "{{ path_linuxbrew }}/bin"
+
+- name: Install Linuxbrew packages from list 'linuxbrew_linux'
+  community.general.homebrew:
+    name: "{{ linuxbrew_linux }}"
+    state: latest
+    path: "{{ path_linuxbrew }}/bin"
+  when: linuxbrew_linux is defined
+
+- name: Install Linuxbrew packages from source from list 'linuxbrew_linux_source'
+  community.general.homebrew:
+    name: "{{ linuxbrew_linux_source }}"
+    state: latest
+    path: "{{ path_linuxbrew }}/bin"
+    install_options: build-from-source
+  when: linuxbrew_linux_source is defined
+
