@@ -1,60 +1,52 @@
 apt_debian:
   - ansible
   - ansible-lint
+  - bat
   - build-essential
   - curl
-  - dialog
   - dnsutils
+  - fd-find
+  - fzf
   - gawk
   - git
+  - git-extras
+  - golang
   - html2text
   - htop
-  - imagemagick
+  - jq
   - less
   - links
+  - neovim
   - nmap
+  - perltidy
+  - php-tidy
   - procps
   - pylint
   - python-is-python3
   - python3-autopep8
   - python3-pip
-  - ruby
+  - ripgrep
+  - shellcheck
+  - silversearcher-ag
   - tidy
   - tmux
   - tmux-plugin-manager
   - tree
+  - urlview
   - vim-nox
   - yamllint
   - zsh
-
-linuxbrew_linux:
-  - bat
-  - bat-extras
-  - fd
-  - fzf
-  - git
-  - git-delta
-  - git-extras
-  - go
-  - jq
-  - k9s
-  - lf
-  - neovim
-  - node
-  - npm
-  - ripgrep
-  - scc
-  - shellcheck
-  - the_silver_searcher
-  - tidy-html5
-  - tree
-  - tree-sitter
-  - zsh
   - zsh-autosuggestions
 
-linuxbrew_linux_source:
-  - urlview
+linuxbrew_linux:
+  - git-delta
+  - k9s
+  - lf
+  - node
+  - scc
+  - tree-sitter
 
+linuxbrew_linux_source:
 
 go_common:
   - golang.org/x/tools/...@latest

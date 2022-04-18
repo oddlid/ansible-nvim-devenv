@@ -2,6 +2,7 @@
   ansible.builtin.apt:
     update_cache: true
     upgrade: full
+    autoclean: true
     autoremove: true
   become: true
 
@@ -9,20 +10,8 @@
   ansible.builtin.apt:
     pkg: "{{ apt_debian }}"
     state: latest
+    autoclean: true
+    autoremove: true
+    install_recommends: no
   become: true
   when: apt_debian is defined
-
-# - name: Install Linuxbrew packages from list 'linuxbrew_linux'
-#   community.general.homebrew:
-#     name: "{{ linuxbrew_linux }}"
-#     state: latest
-#   when: linuxbrew_linux is defined
-
-# - name: Install Go packages from list 'go_common'
-#   ansible.builtin.command:
-#     cmd: go install {{ item }}
-#   loop: "{{ go_common }}"
-#   when: go_common is defined
-#   changed_when: false
-
-

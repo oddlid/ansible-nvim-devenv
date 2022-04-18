@@ -2,16 +2,16 @@
   hosts: localhost
   gather_facts: false
   vars:
-    docker_base: debian-bullseye-base
-    docker_image: debian:bullseye
+    docker_base: debian-testing-base
+    docker_image: debian:testing
   roles:
     - docker_build
 
 - name: Bootstrap Debian
-  hosts: debian-bullseye-base
+  hosts: debian-testing-base
   gather_facts: false
   vars:
-    docker_base: debian-bullseye-base
+    docker_base: debian-testing-base
     user_name: oddee
     user_group: users
     user_groups: sudo
@@ -21,20 +21,21 @@
     - docker_debian
 
 - name: Setup Debian
-  hosts: debian-bullseye-base
+  hosts: debian-testing-base
   vars:
     hostname: debian-wsl
   roles:
     - common
     - linux_debian
     - linux_brew
+    # - golang_tools
 
 - name: Snapshot container
   hosts: localhost
   gather_facts: false
   vars:
-    docker_base: debian-bullseye-base
-    docker_build: debian-bullseye-base
+    docker_base: debian-testing-base
+    docker_build: debian-testing-base
   roles:
     - docker_snapshot
 

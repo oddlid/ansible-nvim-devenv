@@ -34,11 +34,11 @@
     path: "{{ path_linuxbrew }}/bin"
   when: linuxbrew_linux is defined
 
-- name: Install Linuxbrew packages from source from list 'linuxbrew_linux_source'
-  community.general.homebrew:
-    name: "{{ linuxbrew_linux_source }}"
-    state: latest
-    path: "{{ path_linuxbrew }}/bin"
-    install_options: build-from-source
-  when: linuxbrew_linux_source is defined
+# - name: Install Linuxbrew packages from source from list 'linuxbrew_linux_source'
+#   community.general.homebrew:
+#     name: "{{ linuxbrew_linux_source }}"
+#     state: latest
+#     path: "{{ path_linuxbrew }}/bin"
+#     install_options: build-from-source
+#   when: linuxbrew_linux_source is defined
 
