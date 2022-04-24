@@ -1,0 +1,20 @@
+- name: Set password for user root
+  ansible.builtin.user:
+    name: root
+    password: "{{ user_password }}"
+
+- name: Add user {{ user_name }} with primary group {{ user_group }}
+  ansible.builtin.user:
+    name: "{{ user_name }}"
+    group: "{{ user_group }}"
+    groups: "{{ user_groups }}"
+    shell: "{{ user_shell }}"
+    password: "{{ user_password }}"
+
+- name: Re-add Docker container {{ docker_base }} to Ansible hosts inventory
+  ansible.builtin.add_host:
+    name: "{{ docker_base }}"
+    ansible_connection: docker
+    ansible_ssh_user: "{{ user_name }}"
+
+

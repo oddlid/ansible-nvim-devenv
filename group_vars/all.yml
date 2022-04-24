@@ -1,3 +1,55 @@
+archlinux_pacman_pkgs:
+  - ansible
+  - ansible-core
+  - ansible-lint
+  - bat
+  - bat-extras
+  - fd
+  - fzf
+  - git
+  - git-delta
+  - go
+  - htop
+  - jq
+  - k9s
+  - links
+  - neovim
+  - nmap
+  - nodejs
+  - npm
+  - perl-tidy
+  - php-tidy
+  - php7-tidy
+  - python-html2text
+  - python-pylint
+  - ripgrep
+  - shellcheck
+  - the_silver_searcher
+  - tidy
+  - tmux
+  - tree
+  - tree-sitter
+  - vim
+  - yamllint
+  - zsh
+  - zsh-autosuggestions
+
+archlinux_aur_pkgs:
+  - lf
+  - scc
+  - urlview
+
+coc_npm_pkgs:
+  - coc-css
+  - coc-go
+  - coc-html
+  - coc-json
+  - coc-markdownlint
+  - coc-perl
+  - coc-pyright
+  - coc-sh
+  - coc-tsserver
+
 apt_debian:
   - ansible
   - ansible-lint

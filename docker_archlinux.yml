@@ -1,0 +1,41 @@
+- name: Build image
+  hosts: localhost
+  gather_facts: false
+  vars:
+    docker_base: archlinux-base
+    docker_image: oddlid/arch-ansible-base
+  roles:
+    - docker_build
+
+- name: Bootstrap ArchLinux
+  hosts: archlinux-base
+  gather_facts: false
+  vars:
+    docker_base: archlinux-base
+    user_name: oddee
+    user_group: users
+    user_groups:
+      - wheel
+    user_shell: /usr/bin/zsh
+    user_password: $6$0i08C4gqOhx6NMqv$cXIKw5KpHdBgN5k79Vf9xUcDfxbJBTX3XvH41vT3/UWjFaAhxmnv35ouZLxm/9N6RowMjvsHQYbXhSj5tvH8g0
+  roles:
+    - docker_archlinux
+
+- name: Setup ArchLinux
+  hosts: archlinux-base
+  vars:
+    hostname: archlinux-wsl
+  roles:
+    - common
+    - linux_arch
+    # - golang_tools
+
+- name: Snapshot container
+  hosts: localhost
+  gather_facts: false
+  vars:
+    docker_base: archlinux-base
+    docker_build: archlinux-base
+  roles:
+    - docker_snapshot
+

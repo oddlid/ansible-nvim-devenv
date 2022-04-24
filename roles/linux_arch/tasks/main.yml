@@ -1,0 +1,43 @@
+- name: Upgrade all Pacman packages
+  community.general.pacman:
+    update_cache: true
+    upgrade: true
+  become: true
+
+- name: Install pacman packages from list 'archlinux_pacman_pkgs'
+  community.general.pacman:
+    pkg: "{{ archlinux_pacman_pkgs }}"
+    state: latest
+  become: true
+  when: archlinux_pacman_pkgs is defined
+
+- name: Install Ansible AUR module
+  community.general.ansible_galaxy_install:
+    name: kewlfft.aur
+    type: collection
+  become: true
+
+- name: Give sudo access to group wheel
+  become: true
+  ansible.builtin.lineinfile:
+    path: /etc/sudoers.d/00-wheel
+    line: '%wheel ALL=(ALL:ALL) NOPASSWD: ALL'
+    create: true
+    validate: 'visudo -cf %s'
+
+- name: Install yay from AUR
+  kewlfft.aur.aur:
+    name: yay
+    use: makepkg
+    state: latest
+  become: true
+  become_user: "{{ ansible_user_id }}"
+
+- name: Install AUR packages from 'archlinux_aur_pkgs'
+  kewlfft.aur.aur:
+    use: yay
+    name: "{{ archlinux_aur_pkgs }}"
+    state: latest
+  become: true
+  become_user: "{{ ansible_user_id }}"
+
