@@ -121,3 +121,4 @@ go_common:
   - honnef.co/go/tools/cmd/keyify@master
   - github.com/fatih/motion@latest
   - github.com/koron/iferr@master
+  - github.com/vektra/mockery/v2@latest

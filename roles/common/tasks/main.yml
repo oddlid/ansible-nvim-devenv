@@ -4,7 +4,7 @@
 #   become: true
 #   when: ansible_facts.virtualization_type != "docker"
 
-- name: Set misc directory permissions
+- name: Create misc directories
   ansible.builtin.file:
     path: "{{ item }}"
     state: directory
@@ -13,14 +13,19 @@
   loop:
     - "{{ path_home }}"
     - "{{ path_home }}/.ssh"
-
-- name: Create misc directories
-  ansible.builtin.file:
-    path: "{{ item }}"
-    state: directory
-    mode: 0700
-  loop:
     - "{{ path_home }}/.config"
+    - "{{ path_home }}/.config/coc"
+    - "{{ path_home }}/.config/coc/extensions"
     - "{{ path_home }}/.local/bin"
     - "{{ path_home }}/.local/share"
+
+# - name: Create misc directories
+#   ansible.builtin.file:
+#     path: "{{ item }}"
+#     state: directory
+#     mode: 0700
+#   loop:
+#     - "{{ path_home }}/.config"
+#     - "{{ path_home }}/.local/bin"
+#     - "{{ path_home }}/.local/share"
 

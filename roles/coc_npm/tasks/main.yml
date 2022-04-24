@@ -1,0 +1,14 @@
+- name: Create Coc dependencies file
+  ansible.builtin.lineinfile:
+    path: "{{ path_home }}/.config/coc/extensions/package.json"
+    line: '{"dependencies":{}}'
+    create: true
+
+- name: Install Coc packages from list 'coc_npm_pkgs'
+  community.general.npm:
+    ignore_scripts: true
+    no_bin_links: true
+    production: true
+    path: "{{ path_home }}/.config/coc/extensions"
+    name: "{{ item }}"
+  loop: "{{ coc_npm_pkgs }}"

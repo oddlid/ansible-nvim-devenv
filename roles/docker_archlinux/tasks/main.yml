@@ -3,6 +3,13 @@
     name: root
     password: "{{ user_password }}"
 
+- name: Give sudo access to group wheel
+  ansible.builtin.lineinfile:
+    path: /etc/sudoers.d/00-wheel
+    line: '%wheel ALL=(ALL:ALL) NOPASSWD: ALL'
+    create: true
+    validate: 'visudo -cf %s'
+
 - name: Add user {{ user_name }} with primary group {{ user_group }}
   ansible.builtin.user:
     name: "{{ user_name }}"

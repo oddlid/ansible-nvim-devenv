@@ -28,7 +28,8 @@
   roles:
     - common
     - linux_arch
-    # - golang_tools
+    - golang_tools
+    - coc_npm
 
 - name: Snapshot container
   hosts: localhost
