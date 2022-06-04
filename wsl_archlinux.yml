@@ -1,4 +1,5 @@
 - name: Setup ArchLinux
+  hosts: localhost
   roles:
     - common
     - linux_arch

@@ -9,9 +9,11 @@ archlinux_pacman_pkgs:
   - git
   - git-delta
   - go
+  - helm
   - htop
   - jq
   - k9s
+  - kubectl
   - links
   - neovim
   - nmap
