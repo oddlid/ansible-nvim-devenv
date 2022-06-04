@@ -1,0 +1,7 @@
+- name: Setup ArchLinux
+  roles:
+    - common
+    - linux_arch
+    - golang_tools
+    - oh_my_zsh
+

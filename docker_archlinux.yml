@@ -30,6 +30,7 @@
     - linux_arch
     - golang_tools
     - coc_npm
+    - oh_my_zsh
 
 - name: Snapshot container
   hosts: localhost

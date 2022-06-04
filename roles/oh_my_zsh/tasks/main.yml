@@ -1,0 +1,10 @@
+# - name: Setup Oh-My-ZSH
+#   ansible.builtin.git:
+#     repo: https://github.com/ohmyzsh/ohmyzsh.git
+#     dest: ~/.oh-my-zsh
+#     depth: 1
+
+# The installer will set the env var $ZSH (default $HOME/.oh-my-zsh). If this is set when running the installer,
+# it will refuse to continue, so it's safe to rerun this task. Existing setup will not be overwritten.
+- name: Setup Oh-My-ZSH
+  ansible.builtin.raw: sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
