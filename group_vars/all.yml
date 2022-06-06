@@ -25,6 +25,7 @@ archlinux_pacman_pkgs:
   - python-html2text
   - python-pylint
   - ripgrep
+  - rsync
   - shellcheck
   - the_silver_searcher
   - tidy
