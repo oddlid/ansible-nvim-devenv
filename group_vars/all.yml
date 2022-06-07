@@ -4,6 +4,7 @@ archlinux_pacman_pkgs:
   - ansible-lint
   - bat
   - bat-extras
+  - docker
   - fd
   - fzf
   - git
