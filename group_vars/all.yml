@@ -4,6 +4,7 @@ archlinux_pacman_pkgs:
   - ansible-lint
   - bat
   - bat-extras
+  - bc
   - docker
   - fd
   - fzf
@@ -106,25 +107,26 @@ linuxbrew_linux_source:
 
 go_common:
   - golang.org/x/tools/...@latest
+  - golang.org/x/tools/gopls@latest
+  - golang.org/x/tools/cmd/goimports@master
+  - honnef.co/go/tools/cmd/staticcheck@latest
+  - golang.org/x/tools/cmd/gorename@master
+  - golang.org/x/tools/cmd/guru@master
+  - honnef.co/go/tools/cmd/keyify@master
   - github.com/klauspost/asmfmt/cmd/asmfmt@latest
   - github.com/go-delve/delve/cmd/dlv@latest
   - github.com/kisielk/errcheck@latest
   - github.com/davidrjenni/reftools/cmd/fillstruct@master
   - github.com/rogpeppe/godef@latest
-  - golang.org/x/tools/cmd/goimports@master
   - golang.org/x/lint/golint@master
   - github.com/mgechev/revive@latest
-  - golang.org/x/tools/gopls@latest
   - github.com/golangci/golangci-lint/cmd/golangci-lint@latest
-  - honnef.co/go/tools/cmd/staticcheck@latest
   - github.com/fatih/gomodifytags@latest
-  - golang.org/x/tools/cmd/gorename@master
   - github.com/jstemmer/gotags@master
-  - golang.org/x/tools/cmd/guru@master
   - github.com/josharian/impl@master
-  - honnef.co/go/tools/cmd/keyify@master
   - github.com/fatih/motion@latest
   - github.com/koron/iferr@master
   - github.com/cweill/gotests/...@master
   - github.com/vektra/mockery/v2@latest
   - mvdan.cc/gofumpt@latest
+  - github.com/kyoh86/richgo
