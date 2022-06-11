@@ -4,7 +4,13 @@
 #     dest: ~/.oh-my-zsh
 #     depth: 1
 
+- name: Check existence of "{{ path_home }}/.oh-my-zsh"
+  ansible.builtin.stat:
+    path: "{{ path_home }}/.oh-my-zsh"
+  register: st_ohmyzsh
+
 # The installer will set the env var $ZSH (default $HOME/.oh-my-zsh). If this is set when running the installer,
 # it will refuse to continue, so it's safe to rerun this task. Existing setup will not be overwritten.
 - name: Setup Oh-My-ZSH
   ansible.builtin.raw: sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+  when: st_ohmyzsh is skipped

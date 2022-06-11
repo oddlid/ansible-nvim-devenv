@@ -129,4 +129,4 @@ go_common:
   - github.com/cweill/gotests/...@master
   - github.com/vektra/mockery/v2@latest
   - mvdan.cc/gofumpt@latest
-  - github.com/kyoh86/richgo
+  - github.com/kyoh86/richgo@latest
