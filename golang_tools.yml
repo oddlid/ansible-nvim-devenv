@@ -1,0 +1,5 @@
+- name: Install Golang tools
+  hosts: localhost
+  roles:
+    - golang_tools
+
