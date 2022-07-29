@@ -131,3 +131,4 @@ go_common:
   - mvdan.cc/gofumpt@latest
   - github.com/kyoh86/richgo@latest
   - github.com/segmentio/golines@latest
+  - github.com/dundee/gdu/v5/cmd/gdu@latest
