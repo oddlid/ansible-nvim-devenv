@@ -16,6 +16,7 @@ archlinux_pacman_pkgs:
   - jq
   - k9s
   - kubectl
+  - lbzip2
   - links
   - neovim
   - nmap
