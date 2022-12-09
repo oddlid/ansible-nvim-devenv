@@ -133,6 +133,6 @@ go_common:
   - github.com/kyoh86/richgo@latest
   - github.com/segmentio/golines@latest
   - github.com/dundee/gdu/v5/cmd/gdu@latest
-  - github.com/boyter/scc@latest
+  - github.com/boyter/scc/v3@latest
   - github.com/gokcehan/lf@latest
   - github.com/mikefarah/yq/v4@latest
