@@ -124,15 +124,15 @@ go_common:
   - github.com/golangci/golangci-lint/cmd/golangci-lint@latest
   - github.com/fatih/gomodifytags@latest
   - github.com/jstemmer/gotags@master
-  - github.com/josharian/impl@master
+  - github.com/josharian/impl@latest
   - github.com/fatih/motion@latest
   - github.com/koron/iferr@master
-  - github.com/cweill/gotests/...@master
+  - github.com/cweill/gotests/...@latest
   - github.com/vektra/mockery/v2@latest
   - mvdan.cc/gofumpt@latest
   - github.com/kyoh86/richgo@latest
   - github.com/segmentio/golines@latest
   - github.com/dundee/gdu/v5/cmd/gdu@latest
   - github.com/boyter/scc/v3@latest
-  - github.com/gokcehan/lf@latest
+  - github.com/gokcehan/lf@master
   - github.com/mikefarah/yq/v4@latest
