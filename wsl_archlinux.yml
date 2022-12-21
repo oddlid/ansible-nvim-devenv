@@ -1,8 +1,12 @@
 - name: Setup ArchLinux
   hosts: localhost
   roles:
-    - common
-    - linux_arch
-    - golang_tools
-    - oh_my_zsh
+    - role: common
+      tags: fs
+    - role: linux_arch
+      tags: os
+    - role: golang_tools
+      tags: golang
+    - role: oh_my_zsh
+      tags: zsh
 
