@@ -43,7 +43,6 @@ archlinux_pacman_pkgs:
 
 archlinux_aur_pkgs:
   - urlview
-  - win32yank-bin
 
 coc_npm_pkgs:
   - coc-css
