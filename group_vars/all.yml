@@ -135,3 +135,4 @@ go_common:
   - github.com/boyter/scc/v3@latest
   - github.com/gokcehan/lf@master
   - github.com/mikefarah/yq/v4@latest
+  - github.com/jesseduffield/lazygit@latest
