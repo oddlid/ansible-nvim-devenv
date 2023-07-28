@@ -120,6 +120,7 @@ go_common:
   - github.com/rogpeppe/godef@latest
   - golang.org/x/lint/golint@master
   - github.com/mgechev/revive@latest
+  - github.com/nametake/golangci-lint-langserver@latest
   - github.com/golangci/golangci-lint/cmd/golangci-lint@latest
   - github.com/fatih/gomodifytags@latest
   - github.com/jstemmer/gotags@master
