@@ -22,6 +22,7 @@ archlinux_pacman_pkgs:
   - nmap
   - nodejs
   - npm
+  - openssh
   - perl-tidy
   - php-tidy
   - php7-tidy
