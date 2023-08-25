@@ -138,3 +138,4 @@ go_common:
   - github.com/gokcehan/lf@master
   - github.com/mikefarah/yq/v4@latest
   - github.com/jesseduffield/lazygit@latest
+  - github.com/dkorunic/betteralign/cmd/betteralign@latest
