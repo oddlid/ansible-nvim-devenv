@@ -112,7 +112,6 @@ go_common:
   - golang.org/x/tools/cmd/goimports@master
   - honnef.co/go/tools/cmd/staticcheck@latest
   - golang.org/x/tools/cmd/gorename@master
-  - golang.org/x/tools/cmd/guru@master
   - honnef.co/go/tools/cmd/keyify@master
   - github.com/klauspost/asmfmt/cmd/asmfmt@latest
   - github.com/go-delve/delve/cmd/dlv@latest
