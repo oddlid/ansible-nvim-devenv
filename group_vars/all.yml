@@ -5,6 +5,7 @@ archlinux_pacman_pkgs:
   - bat
   - bat-extras
   - bc
+  - debugedit
   - docker
   - fd
   - fzf
